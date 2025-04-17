@@ -1,50 +1,83 @@
+/* Grundlayout */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #e8f0fe;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
+/* Quiz-container */
 .quiz-container {
   text-align: center;
   background-color: #fff;
-  padding: 20px;
+  padding: 30px 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 90%;
+  max-width: 400px;
 }
 
+/* Rubrik */
 h1 {
   font-size: 2em;
   color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+/* Svarsknappar */
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #answers button {
   background-color: #f5a623;
   border: none;
   padding: 10px 20px;
-  font-size: 1.2em;
-  margin: 10px;
+  font-size: 1.1em;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 #answers button:hover {
   background-color: #d4881f;
 }
 
+/* Feedback vid klick */
+#answers button.correct {
+  background-color: #7ed321 !important;
+  color: white;
+}
+
+#answers button.wrong {
+  background-color: #ff4d4d !important;
+  color: white;
+}
+
+/* Nästa-fråga-knapp */
 #next-button {
   background-color: #7ed321;
   border: none;
   padding: 10px 20px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
+  display: none; /* Visa bara efter ett svar */
 }
 
 #next-button:hover {
   background-color: #5d8f1f;
+}
+
+/* Poäng */
+#score {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
 }
