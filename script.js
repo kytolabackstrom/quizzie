@@ -58,5 +58,4 @@ function nextQuestion() {
   }
 }
 
-
 loadQuestion();
