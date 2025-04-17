@@ -16,14 +16,13 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 450px;
-  border: 5px solid #ff7f50;
 }
 
 h1 {
   font-size: 2.5em;
   color: #ff6347;
   margin-bottom: 30px;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Comic Sans MS', sans-serif;
 }
 
 #answers {
@@ -83,17 +82,5 @@ h1 {
   font-weight: bold;
   text-align: center;
   font-family: 'Comic Sans MS', sans-serif;
-}
-
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-10px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
-}
-
-#answers button {
-  animation: bounce 1s infinite;
 }
 
