@@ -55,7 +55,7 @@ function checkAnswer(selectedIndex, clickedButton) {
     allButtons[currentQuestion.correct].classList.add('correct');
   }
 
-  document.getElementById('score').textContent = `Poäng: ${score}`;
+  document.getElementById('score').textContent = 'Poäng: ' + score;  // Bytte till vanlig stringkonkatenering
   document.getElementById('next-button').style.display = 'inline-block';
 }
 
@@ -69,10 +69,10 @@ function nextQuestion() {
 }
 
 function showFinalScore() {
-  document.getElementById('question').textContent = `Du fick ${score} av ${questions.length} rätt!`;
+  document.getElementById('question').textContent = 'Du fick ' + score + ' av ' + questions.length + ' rätt!';  // Bytte till vanlig stringkonkatenering
   document.getElementById('answers').innerHTML = '';
   document.getElementById('next-button').style.display = 'none';
 }
 
+// Lägg till detta för att säkerställa att loadQuestion körs när allt har laddats
 window.onload = loadQuestion;
-
