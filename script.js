@@ -18,33 +18,45 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
+let answered = false;
 
 function loadQuestion() {
   const questionElement = document.getElementById('question');
   const answersElement = document.getElementById('answers');
   const nextButton = document.getElementById('next-button');
-  
-  const currentQuestion = questions[currentQuestionIndex];
-  questionElement.textContent = currentQuestion.question;
-  
+
+  // Återställ tillstånd
+  answered = false;
+  nextButton.style.display = 'none';
+  questionElement.textContent = questions[currentQuestionIndex].question;
   answersElement.innerHTML = '';
-  currentQuestion.answers.forEach((answer, index) => {
+
+  // Skapa svarsknappar
+  questions[currentQuestionIndex].answers.forEach((answer, index) => {
     const button = document.createElement('button');
     button.textContent = answer;
-    button.onclick = () => checkAnswer(index);
+    button.onclick = () => checkAnswer(index, button);
     answersElement.appendChild(button);
   });
-
-  nextButton.style.display = 'none';
 }
 
-function checkAnswer(selectedIndex) {
+function checkAnswer(selectedIndex, clickedButton) {
+  if (answered) return; // Förhindra dubbelklick
+  answered = true;
+
   const currentQuestion = questions[currentQuestionIndex];
+  const allButtons = document.querySelectorAll('#answers button');
+
   if (selectedIndex === currentQuestion.correct) {
+    clickedButton.classList.add('correct');
     score++;
+  } else {
+    clickedButton.classList.add('wrong');
+    allButtons[currentQuestion.correct].classList.add('correct');
   }
+
   document.getElementById('score').textContent = `Poäng: ${score}`;
-  document.getElementById('next-button').style.display = 'block';
+  document.getElementById('next-button').style.display = 'inline-block';
 }
 
 function nextQuestion() {
@@ -52,10 +64,15 @@ function nextQuestion() {
   if (currentQuestionIndex < questions.length) {
     loadQuestion();
   } else {
-    document.getElementById('question').textContent = `Du fick ${score} av ${questions.length} rätt!`;
-    document.getElementById('answers').innerHTML = '';
-    document.getElementById('next-button').style.display = 'none';
+    showFinalScore();
   }
 }
 
-loadQuestion();
+function showFinalScore() {
+  document.getElementById('question').textContent = `Du fick ${score} av ${questions.length} rätt!`;
+  document.getElementById('answers').innerHTML = '';
+  document.getElementById('next-button').style.display = 'none';
+}
+
+window.onload = loadQuestion;
+
