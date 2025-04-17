@@ -13,39 +13,40 @@ body {
 .quiz-container {
   text-align: center;
   background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  border-radius: 15px;  /* Mer rundade hörn */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 400px;
+  max-width: 450px; /* Lite större bredd */
 }
 
 /* Rubrik */
 h1 {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #4a90e2;
-  margin-bottom: 20px;
+  margin-bottom: 25px;  /* Mer utrymme under rubriken */
 }
 
 /* Svarsknappar */
 #answers {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;  /* Lite större avstånd mellan knappar */
 }
 
 #answers button {
   background-color: #f5a623;
   border: none;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  border-radius: 5px;
+  padding: 12px 25px;  /* Mer utrymme i knapparna */
+  font-size: 1.2em;  /* Större text i knapparna */
+  border-radius: 12px;  /* Mer rundade hörn */
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Lägg till en liten effekt för att knapparna blir "lite större" när de trycks */
 }
 
 #answers button:hover {
   background-color: #d4881f;
+  transform: scale(1.05);  /* Gör knapparna lite större vid hover */
 }
 
 /* Feedback vid klick */
@@ -63,21 +64,25 @@ h1 {
 #next-button {
   background-color: #7ed321;
   border: none;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 12px;  /* Mer rundade hörn */
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 25px;
   display: none; /* Visa bara efter ett svar */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #next-button:hover {
   background-color: #5d8f1f;
+  transform: scale(1.05);
 }
 
 /* Poäng */
 #score {
-  margin-top: 20px;
-  font-size: 1.2em;
+  margin-top: 25px;
+  font-size: 1.3em;  /* Större text för poängen */
   color: #333;
+  font-weight: bold;  /* Tjockare text för att betona poäng */
 }
+
