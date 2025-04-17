@@ -1,7 +1,6 @@
-/* Grundlayout */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #e8f0fe;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #f0f8ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,47 +8,47 @@ body {
   margin: 0;
 }
 
-/* Quiz-container */
 .quiz-container {
   text-align: center;
-  background-color: #fff;
-  padding: 40px 30px;
-  border-radius: 15px;  /* Mer rundade hörn */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 450px; /* Lite större bredd */
+  max-width: 450px;
+  border: 5px solid #ff7f50;
 }
 
-/* Rubrik */
 h1 {
-  font-size: 2.2em;
-  color: #4a90e2;
-  margin-bottom: 25px;  /* Mer utrymme under rubriken */
+  font-size: 2.5em;
+  color: #ff6347;
+  margin-bottom: 30px;
+  font-family: 'Pacifico', cursive;
 }
 
-/* Svarsknappar */
 #answers {
   display: flex;
   flex-direction: column;
-  gap: 12px;  /* Lite större avstånd mellan knappar */
+  gap: 15px;
 }
 
 #answers button {
-  background-color: #f5a623;
+  background-color: #f8d210;
   border: none;
-  padding: 12px 25px;  /* Mer utrymme i knapparna */
-  font-size: 1.2em;  /* Större text i knapparna */
-  border-radius: 12px;  /* Mer rundade hörn */
+  padding: 20px 30px;
+  font-size: 1.4em;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Lägg till en liten effekt för att knapparna blir "lite större" när de trycks */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #answers button:hover {
-  background-color: #d4881f;
-  transform: scale(1.05);  /* Gör knapparna lite större vid hover */
+  background-color: #ff4500;
+  transform: scale(1.1);
 }
 
-/* Feedback vid klick */
 #answers button.correct {
   background-color: #7ed321 !important;
   color: white;
@@ -60,29 +59,41 @@ h1 {
   color: white;
 }
 
-/* Nästa-fråga-knapp */
 #next-button {
-  background-color: #7ed321;
+  background-color: #32cd32;
   border: none;
-  padding: 12px 25px;
-  font-size: 1.2em;
-  border-radius: 12px;  /* Mer rundade hörn */
+  padding: 15px 30px;
+  font-size: 1.5em;
+  border-radius: 20px;
   cursor: pointer;
-  margin-top: 25px;
-  display: none; /* Visa bara efter ett svar */
+  margin-top: 30px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
 }
 
 #next-button:hover {
-  background-color: #5d8f1f;
-  transform: scale(1.05);
+  background-color: #228b22;
+  transform: scale(1.1);
 }
 
-/* Poäng */
 #score {
-  margin-top: 25px;
-  font-size: 1.3em;  /* Större text för poängen */
+  margin-top: 30px;
+  font-size: 1.5em;
   color: #333;
-  font-weight: bold;  /* Tjockare text för att betona poäng */
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-10px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+#answers button {
+  animation: bounce 1s infinite;
 }
 
