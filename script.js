@@ -43,7 +43,7 @@ function checkAnswer(selectedIndex) {
   if (selectedIndex === currentQuestion.correct) {
     score++;
   }
-  document.getElementById('score').textContent = Poäng: ${score};
+  document.getElementById('score').textContent = `Poäng: ${score}`;
   document.getElementById('next-button').style.display = 'block';
 }
 
@@ -52,10 +52,11 @@ function nextQuestion() {
   if (currentQuestionIndex < questions.length) {
     loadQuestion();
   } else {
-    document.getElementById('question').textContent = Du fick ${score} av ${questions.length} rätt!;
+    document.getElementById('question').textContent = `Du fick ${score} av ${questions.length} rätt!`;
     document.getElementById('answers').innerHTML = '';
     document.getElementById('next-button').style.display = 'none';
   }
 }
+
 
 loadQuestion();
