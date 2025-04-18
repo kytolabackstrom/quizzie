@@ -56,7 +56,12 @@ function showFinalScore() {
   document.getElementById('next-button').style.display = 'none';
 }
 
-window.onload = loadQuestion;
-window.nextQuestion = nextQuestion;
+window.addEventListener('load', () => {
+  loadQuestion();
+
+  const nextButton = document.getElementById('next-button');
+  nextButton.addEventListener('click', nextQuestion);
+});
+
 
 
