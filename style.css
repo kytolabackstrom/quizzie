@@ -11,10 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-y: auto; /* Tillåter scroll om quizet är för högt */
+  overflow: hidden;
 }
-
-
 
 .quiz-container {
   position: relative;
@@ -23,59 +21,82 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px;
+  padding: 24px 16px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 450px;
-  max-height: 90vh;             /* 🔹 Begränsa höjden */
-  overflow-y: auto;             /* 🔹 Scrolla internt om det behövs */
+  width: 95%;
+  max-width: 420px;
+  max-height: 95vh;
+  overflow-y: auto;
   overflow-x: hidden;
   z-index: 0;
 }
 
+/* Mobilanpassning */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 20px 12px;
+    max-height: 90vh;
+  }
+
+  .question-container {
+    font-size: 1.6em;
+    padding: 20px;
+  }
+
+  #answers button {
+    font-size: 1.1em;
+    padding: 14px 18px;
+    max-width: 280px;
+  }
+
+  #next-button,
+  #restart-button {
+    font-size: 1.2em;
+    padding: 12px 24px;
+  }
+}
 
 .quiz-container::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.30); /* Justera detta värde för mer/mindre ljus overlay */
+  background-color: rgba(255, 255, 255, 0.30);
   z-index: 1;
-  pointer-events: none; /* Så overlayn inte blockerar klick */
+  pointer-events: none;
 }
 
-/* Allt innehåll inuti quiz-container placeras ovanpå overlayn */
 .quiz-container > * {
   position: relative;
   z-index: 2;
+  scroll-behavior: smooth;
 }
 
-/* Container för frågan */
 .question-container {
-  background-color: #FFE6C7; /* Matchar bakgrunden bakom frågan i bilden */
+  background-color: #FFE6C7;
   border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 24px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 2em;
   font-weight: bold;
-  color: #3E1F47; /* Mörk plommonlila som i texten på bilden */
+  color: #3E1F47;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   max-width: 95%;
-  margin: 20px auto;
+  margin: 16px auto;
 }
 
 #answers {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 #answers button {
   border: none;
-  padding: 18px 24px;
-  font-size: 1.4em;
+  padding: 16px 20px;
+  font-size: 1.3em;
   font-weight: bold;
   margin: 6px auto;
   border-radius: 25px;
@@ -85,58 +106,49 @@ body {
   font-family: 'Comic Sans MS', sans-serif;
   display: block;
   width: 85%;
-  max-width: 320px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* rund, mjuk skugga */
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Färgtema */
 .btn-orange    { background-color: #F9A26C; }
 .btn-lilac     { background-color: #B89EFF; }
 .btn-turquoise { background-color: #66D4CF; }
 .btn-lemon     { background-color: #C9E265; }
 
-/* Hover-effekt */
 #answers button:hover {
   filter: brightness(1.08);
   transform: scale(1.05);
 }
 
-/* Rätt svar – mörkare grön */
 #answers button.correct {
-  background-color: #5aa637 !important; /* Mörkare men fortfarande "snäll" grön */
+  background-color: #5aa637 !important;
   color: #3E1F47;
 }
 
-/* Fel svar – behåll stilen */
 #answers button.wrong {
-  background-color: #e05b5b !important; /* Något dämpad röd för att passa stilen */
+  background-color: #e05b5b !important;
   color: #3E1F47;
 }
 
-/* Dämpade knappar – blekare färg och text */
 #answers button.dimmed {
-  background-color: #f5f5f5 !important; /* Väldigt ljusgrå/beige */
-  color: #aaa !important; /* Svag textfärg */
+  background-color: #f5f5f5 !important;
+  color: #aaa !important;
   cursor: default;
 }
 
-/* Förhindra hover-effekt på disabled knappar */
 #answers button:disabled:hover {
   filter: none;
   transform: none;
 }
 
-
-
 #next-button {
   background-color: #32cd32;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.5em;
+  padding: 14px 28px;
+  font-size: 1.4em;
   border-radius: 20px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 24px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Comic Sans MS', sans-serif;
 }
@@ -147,8 +159,8 @@ body {
 }
 
 #score {
-  margin-top: 30px;
-  font-size: 1.5em;
+  margin-top: 24px;
+  font-size: 1.4em;
   color: #333;
   font-weight: bold;
   text-align: center;
@@ -158,8 +170,8 @@ body {
 #restart-button {
   background-color: #1e90ff;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.5em;
+  padding: 14px 28px;
+  font-size: 1.4em;
   border-radius: 20px;
   cursor: pointer;
   margin-top: 20px;
