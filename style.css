@@ -74,15 +74,17 @@ h1 {
   padding: 18px 24px;
   font-size: 1.4em;
   margin: 6px auto;
-  border-radius: 25px; /* mjuka, rundade knappar */
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  color:#3E1F47;  
+  color: #3E1F47;
   font-family: 'Comic Sans MS', sans-serif;
   display: block;
   width: 85%;
   max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* rund, mjuk skugga */
 }
+
 
 /* Färgtema */
 .btn-orange    { background-color: #F9A26C; }
