@@ -23,7 +23,7 @@ body {
   background-image: url('images/karta.png'); /* byt sökväg om bilden ligger annorlunda */
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* justera efter hur tydlig du vill att bilden ska vara */
+  opacity: 0.1; /* justera efter hur tydlig du vill att bilden ska vara */
   z-index: 0;
 }
 
@@ -31,7 +31,7 @@ body {
   position: relative;
   z-index: 1;
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.85);
   text-align: center;
   border-radius: 20px;
 }
