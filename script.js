@@ -94,17 +94,25 @@ function checkAnswer(selectedIndex, clickedButton) {
   const currentQuestion = questions[currentQuestionIndex];
   const allButtons = document.querySelectorAll('#answers button');
 
-  if (selectedIndex === currentQuestion.correct) {
-    clickedButton.classList.add('correct');
-    score++;
-  } else {
-    clickedButton.classList.add('wrong');
-    allButtons[currentQuestion.correct].classList.add('correct');
-  }
+  allButtons.forEach((btn, index) => {
+    btn.disabled = true; // Inaktivera alla efter svar
+
+    if (index === selectedIndex && index === currentQuestion.correct) {
+      btn.classList.add('correct'); // Rätt val
+      score++;
+    } else if (index === selectedIndex && index !== currentQuestion.correct) {
+      btn.classList.add('wrong'); // Fel val
+    } else if (index === currentQuestion.correct) {
+      btn.classList.add('correct'); // Visa vilket som var rätt
+    } else {
+      btn.classList.add('dimmed'); // Övriga knappar
+    }
+  });
 
   displayScore();
   nextButton.style.display = 'inline-block';
 }
+
 
 function nextQuestion() {
   currentQuestionIndex++;
