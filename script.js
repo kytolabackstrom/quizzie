@@ -17,6 +17,11 @@ async function loadQuestions() {
   }
 }
 
+function shuffleQuestions() {
+  // Slumpa om frågorna
+  questions = questions.sort(() => Math.random() - 0.5);
+}
+
 function loadQuestion() {
   const questionElement = document.getElementById('question');
   const answersElement = document.getElementById('answers');
@@ -75,7 +80,9 @@ function restartQuiz() {
   score = 0;
   document.getElementById('score').textContent = 'Poäng: 0';
   document.getElementById('restart-button').style.display = 'none';
-  loadQuestion();
+  
+  shuffleQuestions(); // Slumpa om frågorna
+  loadQuestion(); // Kör första frågan igen efter att ha slumpat om
 }
 
 window.addEventListener('load', () => {
