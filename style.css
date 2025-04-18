@@ -1,3 +1,89 @@
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.quiz-container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 450px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #ff6347;
+  margin-bottom: 30px;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#answers button {
+  background-color: #f8d210;
+  border: none;
+  padding: 20px 30px;
+  font-size: 1.4em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#answers button:hover {
+  background-color: #ff4500;
+  transform: scale(1.1);
+}
+
+#answers button.correct {
+  background-color: #7ed321 !important;
+  color: white;
+}
+
+#answers button.wrong {
+  background-color: #ff4d4d !important;
+  color: white;
+}
+
+#next-button {
+  background-color: #32cd32;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+#next-button:hover {
+  background-color: #228b22;
+  transform: scale(1.1);
+}
+
+#score {
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
 #restart-button {
   background-color: #1e90ff;
   border: none;
