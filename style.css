@@ -4,9 +4,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;        /* <-- se till att den använder hela höjden */
   margin: 0;
 }
+
 
 .quiz-container {
   position: relative;
