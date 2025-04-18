@@ -71,30 +71,30 @@ h1 {
 
 #answers button {
   border: none;
-  padding: 12px 20px;
-  font-size: 1.2em;
-  margin: 10px;
-  border-radius: 10px;
+  padding: 18px 24px;
+  font-size: 1.4em;
+  margin: 6px auto;
+  border-radius: 25px; /* mjuka, rundade knappar */
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #FCF5DC; /* varm ljus textfärg istället för kritvit */
   display: block;
-  width: 80%;
-  max-width: 300px;
-  margin: 10px auto;
+  width: 85%;
+  max-width: 320px;
 }
 
-/* Färgtema för varje knapp (du kan rotera dessa per fråga/svar) */
-.btn-orange { background-color: #F9A26C; }     /* varm orange */
-.btn-lilac { background-color: #B89EFF; }      /* mild lila */
-.btn-turquoise { background-color: #66D4CF; }  /* turkosblå */
-.btn-lemon { background-color: #C9E265; }      /* ljus limegrön */
+/* Färgtema */
+.btn-orange    { background-color: #F9A26C; }
+.btn-lilac     { background-color: #B89EFF; }
+.btn-turquoise { background-color: #66D4CF; }
+.btn-lemon     { background-color: #C9E265; }
 
 /* Hover-effekt */
 #answers button:hover {
-  filter: brightness(1.1);
-  transform: scale(1.1);
+  filter: brightness(1.08);
+  transform: scale(1.05);
 }
+
 
 
 #answers button.correct {
