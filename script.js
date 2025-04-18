@@ -18,8 +18,9 @@ async function loadQuestions() {
 }
 
 function shuffleQuestions() {
-  // Slumpa om frågorna
-  questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+  // Slumpa om frågorna (den här är egentligen inte längre nödvändig
+  // eftersom vi redan har slumpat när vi valde 5 frågor i loadQuestions)
+  questions = questions.sort(() => Math.random() - 0.5);
 }
 
 function loadQuestion() {
@@ -81,8 +82,7 @@ function restartQuiz() {
   document.getElementById('score').textContent = 'Poäng: 0';
   document.getElementById('restart-button').style.display = 'none';
   
-  shuffleQuestions(); // Slumpa om frågorna
-  loadQuestion(); // Kör första frågan igen efter att ha slumpat om
+  loadQuestions(); // Ladda om frågorna och slumpa på nytt
 }
 
 window.addEventListener('load', () => {
