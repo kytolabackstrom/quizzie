@@ -29,8 +29,8 @@ body {
   position: absolute;
   inset: 0;
   background-color: rgba(255, 255, 255, 0.30); /* Justera detta värde för mer/mindre ljus overlay */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px); /* Safari support */
   z-index: 1;
   pointer-events: none; /* Så overlayn inte blockerar klick */
 }
