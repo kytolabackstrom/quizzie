@@ -73,6 +73,7 @@ h1 {
   border: none;
   padding: 18px 24px;
   font-size: 1.4em;
+  font-weight: bold;
   margin: 6px auto;
   border-radius: 25px;
   cursor: pointer;
