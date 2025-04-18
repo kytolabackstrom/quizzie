@@ -20,3 +20,121 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 450px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.quiz-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.30); /* Justera detta värde för mer/mindre ljus overlay */
+  z-index: 1;
+  pointer-events: none; /* Så overlayn inte blockerar klick */
+}
+
+/* Allt innehåll inuti quiz-container placeras ovanpå overlayn */
+.quiz-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Container för frågan */
+.question-container {
+  background-color: #ffeb3b; /* Färgglad bakgrund för att göra frågan mer synlig */
+  border-radius: 15px; /* Rundade hörn */
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.8em; /* Lite större text */
+  font-weight: bold;
+  color: #d32f2f; /* En kontrasterande färg för texten */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lätt skugga för att ge djup */
+  width: 80%; /* För att ge den lite mer andrum på sidan */
+  max-width: 90%; /* För att hålla den responsiv */
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #d32f2f; /* Kontrastfärg för rubriken */
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#answers button {
+  background-color: #f8d210;
+  border: none;
+  padding: 20px 30px;
+  font-size: 1.4em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#answers button:hover {
+  background-color: #ff4500;
+  transform: scale(1.1);
+}
+
+#answers button.correct {
+  background-color: #7ed321 !important;
+  color: white;
+}
+
+#answers button.wrong {
+  background-color: #ff4d4d !important;
+  color: white;
+}
+
+#next-button {
+  background-color: #32cd32;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+#next-button:hover {
+  background-color: #228b22;
+  transform: scale(1.1);
+}
+
+#score {
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+#restart-button {
+  background-color: #1e90ff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: white;
+}
+
+#restart-button:hover {
+  background-color: #187bcd;
+  transform: scale(1.1);
+}
