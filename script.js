@@ -2,10 +2,11 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
-let numberOfQuestions = 3;
 let allQuestions = [];  // Här sparar vi alla frågor från 'questions.json'
 let usedQuestions = []; // Här sparar vi de frågor som redan valts under omgången
 const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
+
+const numberOfQuestions = 3;
 
 // Ladda alla frågor från JSON-filen och förbered för quizet
 async function loadQuestions() {
