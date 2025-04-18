@@ -1,26 +1,37 @@
+// === 1. KONFIGURATION & INIT ===
+const numberOfQuestions = 3;
+const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
+
+let allQuestions = [];
+let usedQuestions = [];
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
-let allQuestions = [];
-let usedQuestions = [];
 
-const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
-const numberOfQuestions = 3;
-
-// ✅ Punkt 3: Cacha alla DOM-element en gång
+// === 2. DOM-ELEMENT ===
 const questionElement = document.getElementById('question');
 const answersElement = document.getElementById('answers');
 const nextButton = document.getElementById('next-button');
 const restartButton = document.getElementById('restart-button');
 const scoreElement = document.getElementById('score');
 
-// ✅ Punkt 4: Separat funktion för att visa poäng
+// === 3. HJÄLPFUNKTIONER ===
+
+// Fisher-Yates shuffle
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function displayScore() {
   scoreElement.textContent = `Poäng: ${score}`;
 }
 
-// ✅ Punkt 4: Separat funktion för att visa slutresultat
 function displayFinalScore() {
   questionElement.textContent = `Du fick ${score} av ${questions.length} rätt!`;
   answersElement.innerHTML = '';
@@ -28,7 +39,8 @@ function displayFinalScore() {
   restartButton.style.display = 'inline-block';
 }
 
-// ✅ Punkt 1: const där det inte ändras
+// === 4. LADDA FRÅGOR ===
+
 async function loadQuestions() {
   try {
     const response = await fetch('questions.json');
@@ -56,15 +68,7 @@ function loadNextSetOfQuestions() {
   loadQuestion();
 }
 
-// Fisher-Yates shuffle
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
+// === 5. QUIZLOGIK ===
 
 function loadQuestion() {
   answered = false;
@@ -119,8 +123,11 @@ function restartQuiz() {
   loadNextSetOfQuestions();
 }
 
+// === 6. INITIERA ===
+
 window.addEventListener('load', () => {
   loadQuestions();
   nextButton.addEventListener('click', nextQuestion);
   restartButton.addEventListener('click', restartQuiz);
 });
+
