@@ -70,21 +70,32 @@ h1 {
 }
 
 #answers button {
-  background-color: #f8d210;
   border: none;
-  padding: 20px 30px;
-  font-size: 1.4em;
-  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  margin: 10px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: 'Comic Sans MS', sans-serif;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  color: #fff;
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  margin: 10px auto;
 }
 
+/* Färgtema för varje knapp (du kan rotera dessa per fråga/svar) */
+.btn-orange { background-color: #F9A26C; }     /* varm orange */
+.btn-lilac { background-color: #B89EFF; }      /* mild lila */
+.btn-turquoise { background-color: #66D4CF; }  /* turkosblå */
+.btn-lemon { background-color: #C9E265; }      /* ljus limegrön */
+
+/* Hover-effekt */
 #answers button:hover {
-  background-color: #ff4500;
+  filter: brightness(1.1);
   transform: scale(1.1);
 }
+
 
 #answers button.correct {
   background-color: #7ed321 !important;
