@@ -77,7 +77,8 @@ h1 {
   border-radius: 25px; /* mjuka, rundade knappar */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  color: #FCF5DC; /* varm ljus textfärg istället för kritvit */
+  color:#3E1F47;  
+  font-family: 'Comic Sans MS', sans-serif;
   display: block;
   width: 85%;
   max-width: 320px;
