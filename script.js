@@ -54,6 +54,16 @@ function showFinalScore() {
   document.getElementById('question').textContent = 'Du fick ' + score + ' av ' + questions.length + ' rätt!';
   document.getElementById('answers').innerHTML = '';
   document.getElementById('next-button').style.display = 'none';
+  document.getElementById('restart-button').style.display = 'inline-block';
+}
+
+
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  document.getElementById('score').textContent = 'Poäng: 0';
+  document.getElementById('restart-button').style.display = 'none';
+  loadQuestion();
 }
 
 window.addEventListener('load', () => {
