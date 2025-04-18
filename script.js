@@ -57,4 +57,6 @@ function showFinalScore() {
 }
 
 window.onload = loadQuestion;
+window.nextQuestion = nextQuestion;
+
 
