@@ -9,7 +9,7 @@ async function loadQuestions() {
     const allQuestions = await response.json();
     
     // Slumpa och välj ut 5 frågor
-    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 3);
 
     loadQuestion(); // Kör första frågan direkt efter laddning
   } catch (error) {
