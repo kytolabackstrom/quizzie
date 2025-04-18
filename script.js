@@ -2,27 +2,42 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
+let allQuestions = [];  // Här sparar vi alla frågor från 'questions.json'
+let usedQuestions = []; // Här sparar vi de frågor som redan valts under omgången
 
+// Ladda alla frågor från JSON-filen och förbered för quizet
 async function loadQuestions() {
   try {
     const response = await fetch('questions.json');
-    const allQuestions = await response.json();
-    
-    // Slumpa och välj ut 5 frågor
-    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 3);
-
-    loadQuestion(); // Kör första frågan direkt efter laddning
+    allQuestions = await response.json();
+    usedQuestions = [];  // Töm tidigare valda frågor
+    loadNextSetOfQuestions(); // Ladda de första frågorna för quizet
   } catch (error) {
     console.error("Kunde inte ladda frågorna:", error);
   }
 }
 
-function shuffleQuestions() {
-  // Slumpa om frågorna (den här är egentligen inte längre nödvändig
-  // eftersom vi redan har slumpat när vi valde 5 frågor i loadQuestions)
-  questions = questions.sort(() => Math.random() - 0.5);
+// Funktion för att slumpa om frågorna när de valda inte räcker
+function loadNextSetOfQuestions() {
+  if (allQuestions.length - usedQuestions.length < 5) {
+    // Om det finns färre än 5 frågor kvar som inte valts, slumpa om alla frågor
+    usedQuestions = [];  // Töm de valda frågorna så att vi kan börja om
+    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);  // Välj nya slumpade frågor
+  } else {
+    // Annars, välj 5 nya frågorna som inte har använts tidigare
+    let availableQuestions = allQuestions.filter(q => !usedQuestions.includes(q));
+    questions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+  }
+
+  // Lägg till de valda frågorna till usedQuestions
+  usedQuestions = usedQuestions.concat(questions);
+
+  currentQuestionIndex = 0;
+  score = 0;
+  loadQuestion();
 }
 
+// Ladda en fråga
 function loadQuestion() {
   const questionElement = document.getElementById('question');
   const answersElement = document.getElementById('answers');
@@ -41,6 +56,7 @@ function loadQuestion() {
   });
 }
 
+// Kontrollera om svaret är korrekt
 function checkAnswer(selectedIndex, clickedButton) {
   if (answered) return;
   answered = true;
@@ -60,6 +76,7 @@ function checkAnswer(selectedIndex, clickedButton) {
   document.getElementById('next-button').style.display = 'inline-block';
 }
 
+// Gå till nästa fråga
 function nextQuestion() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -69,6 +86,7 @@ function nextQuestion() {
   }
 }
 
+// Visa slutresultat
 function showFinalScore() {
   document.getElementById('question').textContent = 'Du fick ' + score + ' av ' + questions.length + ' rätt!';
   document.getElementById('answers').innerHTML = '';
@@ -76,13 +94,14 @@ function showFinalScore() {
   document.getElementById('restart-button').style.display = 'inline-block';
 }
 
+// Starta om quizet
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   document.getElementById('score').textContent = 'Poäng: 0';
   document.getElementById('restart-button').style.display = 'none';
   
-  loadQuestions(); // Ladda om frågorna och slumpa på nytt
+  loadNextSetOfQuestions(); // Ladda en ny uppsättning frågor (med nya slumpade)
 }
 
 window.addEventListener('load', () => {
