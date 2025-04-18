@@ -102,13 +102,13 @@ h1 {
 /* Rätt svar – mörkare grön */
 #answers button.correct {
   background-color: #5aa637 !important; /* Mörkare men fortfarande "snäll" grön */
-  color: white;
+  color: #3E1F47;
 }
 
 /* Fel svar – behåll stilen */
 #answers button.wrong {
   background-color: #e05b5b !important; /* Något dämpad röd för att passa stilen */
-  color: white;
+  color: #3E1F47;
 }
 
 /* Dämpade knappar – blekare färg och text */
