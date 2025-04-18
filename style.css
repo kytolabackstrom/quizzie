@@ -9,19 +9,34 @@ body {
 }
 
 .quiz-container {
+  position: relative;
   text-align: center;
   background-image: url('images/karta.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.20); /* detta lägger ett semi-transparant lager över bilden */
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 450px;
+  overflow: hidden;
+  z-index: 0;
 }
 
+.quiz-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Justera detta värde för mer/mindre ljus overlay */
+  z-index: 1;
+}
+
+/* Allt innehåll inuti quiz-container placeras ovanpå overlayn */
+.quiz-container > * {
+  position: relative;
+  z-index: 2;
+}
 
 
 
