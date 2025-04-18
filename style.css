@@ -41,19 +41,20 @@ body {
 
 /* Container för frågan */
 .question-container {
-  background-color: #f7f7f7; /* En mjukare bakgrundsfärg för en lugnare känsla */
-  border-radius: 20px; /* Lite mer rundade hörn för en vänligare känsla */
-  padding: 30px; /* Ökad padding för mer andrum */
+  background-color: #FFE6C7; /* Matchar bakgrunden bakom frågan i bilden */
+  border-radius: 20px;
+  padding: 30px;
   margin-bottom: 30px;
   text-align: center;
-  font-size: 2em; /* Lite större text */
+  font-size: 2em;
   font-weight: bold;
-  color: #3f51b5; /* En mörkblå färg som är lätt att läsa och vänlig */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lättare skugga för ett mjukare djup */
-  width: 90%; /* Lite mer utrymme för texten */
-  max-width: 95%; /* Gör det mer responsivt */
+  color: #3E1F47; /* Mörk plommonlila som i texten på bilden */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 95%;
   margin: 20px auto;
 }
+
 
 h1 {
   font-size: 2.5em;
