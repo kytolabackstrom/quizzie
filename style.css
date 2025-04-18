@@ -27,6 +27,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 95%;
   max-width: 800px;
+  min-height: 700px;
   overflow: visible;
   z-index: 0;
 
