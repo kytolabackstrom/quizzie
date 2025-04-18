@@ -11,12 +11,17 @@ body {
 .quiz-container {
   text-align: center;
   background-color: #ffffff;
+  background-image: url('images/karta.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 450px;
 }
+
 
 h1 {
   font-size: 2.5em;
