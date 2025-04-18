@@ -99,20 +99,31 @@ h1 {
   transform: scale(1.05);
 }
 
-#answers button.correct { 
-  background-color: #A4D88C !important;  /* mjuk grön */
-  color: #3E1F47 !important;            /* mörk plommon – samma som frågetext */
+/* Rätt svar – mörkare grön */
+#answers button.correct {
+  background-color: #5aa637 !important; /* Mörkare men fortfarande "snäll" grön */
+  color: white;
 }
 
+/* Fel svar – behåll stilen */
 #answers button.wrong {
-  background-color: #F28B82 !important;  /* mjuk röd */
-  color: #3E1F47 !important;
+  background-color: #e05b5b !important; /* Något dämpad röd för att passa stilen */
+  color: white;
 }
 
+/* Dämpade knappar – blekare färg och text */
 #answers button.dimmed {
-  background-color: #FDF3E7 !important;  /* beige/vit */
-  color: #3E1F47 !important;
+  background-color: #f5f5f5 !important; /* Väldigt ljusgrå/beige */
+  color: #aaa !important; /* Svag textfärg */
+  cursor: default;
 }
+
+/* Förhindra hover-effekt på disabled knappar */
+#answers button:disabled:hover {
+  filter: none;
+  transform: none;
+}
+
 
 
 #next-button {
