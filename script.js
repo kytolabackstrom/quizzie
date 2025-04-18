@@ -6,7 +6,11 @@ let answered = false;
 async function loadQuestions() {
   try {
     const response = await fetch('questions.json');
-    questions = await response.json();
+    const allQuestions = await response.json();
+    
+    // Slumpa och välj ut 5 frågor
+    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+
     loadQuestion(); // Kör första frågan direkt efter laddning
   } catch (error) {
     console.error("Kunde inte ladda frågorna:", error);
@@ -80,7 +84,3 @@ window.addEventListener('load', () => {
   document.getElementById('next-button').addEventListener('click', nextQuestion);
   document.getElementById('restart-button').addEventListener('click', restartQuiz);
 });
-
-
-
-
