@@ -76,7 +76,7 @@ body {
   background-color: #FFE6C7;
   border-radius: 20px;
   padding: 24px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto; /* Centrerar horisontellt och lägger till bottenspace */
   text-align: center;
   font-size: 2em;
   font-weight: bold;
@@ -84,8 +84,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 95%;
-  margin: 16px auto;
 }
+
 
 #answers {
   display: flex;
