@@ -5,6 +5,7 @@ let answered = false;
 let numberOfQuestions = 3;
 let allQuestions = [];  // Här sparar vi alla frågor från 'questions.json'
 let usedQuestions = []; // Här sparar vi de frågor som redan valts under omgången
+const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
 
 // Ladda alla frågor från JSON-filen och förbered för quizet
 async function loadQuestions() {
@@ -52,6 +53,7 @@ function loadQuestion() {
   questions[currentQuestionIndex].answers.forEach((answer, index) => {
     const button = document.createElement('button');
     button.textContent = answer;
+    button.classList.add(buttonColors[index % buttonColors.length]); // Lägg till färgklass
     button.onclick = () => checkAnswer(index, button);
     answersElement.appendChild(button);
   });
