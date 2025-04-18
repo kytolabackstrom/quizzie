@@ -5,17 +5,7 @@ let answered = false;
 let allQuestions = [];  // Här sparar vi alla frågor från 'questions.json'
 let usedQuestions = []; // Här sparar vi de frågor som redan valts under omgången
 const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
-let config = {};
-
-async function loadConfig() {
-  try {
-    const response = await fetch('config.json');
-    config = await response.json();
-    loadQuestions();  // När konfigurationen är laddad, ladda frågorna
-  } catch (error) {
-    console.error("Kunde inte ladda konfigurationen:", error);
-  }
-}
+const numberOfQuestions = 3;
 
 // Ladda alla frågor från JSON-filen och förbered för quizet
 async function loadQuestions() {
@@ -31,14 +21,14 @@ async function loadQuestions() {
 
 // Funktion för att slumpa om frågorna när de valda inte räcker
 function loadNextSetOfQuestions() {
-  if (allQuestions.length - usedQuestions.length < config.numberOfQuestions) {
+  if (allQuestions.length - usedQuestions.length < numberOfQuestions) {
     // Om det finns färre än config.numberOfQuestions frågor kvar som inte valts, slumpa om alla frågor
     usedQuestions = [];  // Töm de valda frågorna så att vi kan börja om
-    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, config.numberOfQuestions);  // Välj nya slumpade frågor
+    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, numberOfQuestions);  // Välj nya slumpade frågor
   } else {
     // Annars, välj 5 nya frågorna som inte har använts tidigare
     let availableQuestions = allQuestions.filter(q => !usedQuestions.includes(q));
-    questions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, config.numberOfQuestions);
+    questions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, numberOfQuestions);
   }
 
   // Lägg till de valda frågorna till usedQuestions
