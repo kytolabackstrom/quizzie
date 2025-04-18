@@ -57,7 +57,6 @@ function showFinalScore() {
   document.getElementById('restart-button').style.display = 'inline-block';
 }
 
-
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
@@ -71,6 +70,9 @@ window.addEventListener('load', () => {
 
   const nextButton = document.getElementById('next-button');
   nextButton.addEventListener('click', nextQuestion);
+
+  const restartButton = document.getElementById('restart-button');
+  restartButton.addEventListener('click', restartQuiz);
 });
 
 
