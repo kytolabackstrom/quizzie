@@ -1,8 +1,17 @@
-import { questions } from './questions.js';
-
+let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
+
+async function loadQuestions() {
+  try {
+    const response = await fetch('questions.json');
+    questions = await response.json();
+    loadQuestion(); // Kör första frågan direkt efter laddning
+  } catch (error) {
+    console.error("Kunde inte ladda frågorna:", error);
+  }
+}
 
 function loadQuestion() {
   const questionElement = document.getElementById('question');
@@ -66,14 +75,12 @@ function restartQuiz() {
 }
 
 window.addEventListener('load', () => {
-  loadQuestion();
+  loadQuestions();
 
-  const nextButton = document.getElementById('next-button');
-  nextButton.addEventListener('click', nextQuestion);
-
-  const restartButton = document.getElementById('restart-button');
-  restartButton.addEventListener('click', restartQuiz);
+  document.getElementById('next-button').addEventListener('click', nextQuestion);
+  document.getElementById('restart-button').addEventListener('click', restartQuiz);
 });
+
 
 
 
