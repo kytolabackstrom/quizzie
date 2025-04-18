@@ -9,9 +9,10 @@ html, body {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 40px 0;
 }
 
 .quiz-container {
@@ -26,14 +27,12 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 95%;
   max-width: 800px;
-  max-height: 95vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: visible;
   z-index: 0;
 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Detta centrerar barn horisontellt */
+  align-items: center;
 }
 
 .quiz-container::before {
@@ -55,7 +54,7 @@ body {
   background-color: #FFE6C7;
   border-radius: 20px;
   padding: 24px;
-  margin-bottom: 20px; /* Behåll spacing nedåt */
+  margin-bottom: 20px;
   text-align: center;
   font-size: 2em;
   font-weight: bold;
@@ -69,7 +68,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 85%;
+  width: 100%;
+  max-width: 360px;
 }
 
 #answers button {
@@ -84,8 +84,8 @@ body {
   color: #3E1F47;
   font-family: 'Comic Sans MS', sans-serif;
   display: block;
-  width: 85%;
-  max-width: 300px;
+  width: 100%;
+  max-width: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
