@@ -2,6 +2,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let answered = false;
+let numberOfQuestions = 3;
 let allQuestions = [];  // Här sparar vi alla frågor från 'questions.json'
 let usedQuestions = []; // Här sparar vi de frågor som redan valts under omgången
 
@@ -19,14 +20,14 @@ async function loadQuestions() {
 
 // Funktion för att slumpa om frågorna när de valda inte räcker
 function loadNextSetOfQuestions() {
-  if (allQuestions.length - usedQuestions.length < 5) {
-    // Om det finns färre än 5 frågor kvar som inte valts, slumpa om alla frågor
+  if (allQuestions.length - usedQuestions.length < numberOfQuestions) {
+    // Om det finns färre än numberOfQuestions frågor kvar som inte valts, slumpa om alla frågor
     usedQuestions = [];  // Töm de valda frågorna så att vi kan börja om
-    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);  // Välj nya slumpade frågor
+    questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, numberOfQuestions);  // Välj nya slumpade frågor
   } else {
     // Annars, välj 5 nya frågorna som inte har använts tidigare
     let availableQuestions = allQuestions.filter(q => !usedQuestions.includes(q));
-    questions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+    questions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, numberOfQuestions);
   }
 
   // Lägg till de valda frågorna till usedQuestions
