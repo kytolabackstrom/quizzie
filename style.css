@@ -99,17 +99,21 @@ h1 {
   transform: scale(1.05);
 }
 
-
-
-#answers button.correct {
-  background-color: #7ed321 !important;
-  color: white;
+#answers button.correct { 
+  background-color: #A4D88C !important;  /* mjuk grön */
+  color: #3E1F47 !important;            /* mörk plommon – samma som frågetext */
 }
 
 #answers button.wrong {
-  background-color: #ff4d4d !important;
-  color: white;
+  background-color: #F28B82 !important;  /* mjuk röd */
+  color: #3E1F47 !important;
 }
+
+#answers button.dimmed {
+  background-color: #FDF3E7 !important;  /* beige/vit */
+  color: #3E1F47 !important;
+}
+
 
 #next-button {
   background-color: #32cd32;
