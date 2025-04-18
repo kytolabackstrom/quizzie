@@ -69,6 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 85%;
 }
 
 #answers button {
