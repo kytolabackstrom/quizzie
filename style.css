@@ -9,33 +9,19 @@ body {
 }
 
 .quiz-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 450px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.quiz-background {
-  position: absolute;
-  inset: 0;
-  background-image: url('images/karta.png'); /* byt sökväg om bilden ligger annorlunda */
+  text-align: center;
+  background-image: url('images/karta.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.8; /* justera efter hur tydlig du vill att bilden ska vara */
-  z-index: 0;
-  filter: contrast(1.2) brightness(0.9);
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.85); /* detta lägger ett semi-transparant lager över bilden */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 450px;
 }
 
-.quiz-content {
-  position: relative;
-  z-index: 1;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.8); 
-  text-align: center;
-  border-radius: 20px;
-}
 
 
 
