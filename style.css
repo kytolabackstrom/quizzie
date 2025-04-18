@@ -1,58 +1,22 @@
-/* Container för frågan */
-.question-container {
-  background-color: #ffeb3b; /* Färgglad bakgrund för att göra frågan mer synlig */
-  border-radius: 15px; /* Rundade hörn */
-  padding: 20px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 1.8em; /* Lite större text */
-  font-weight: bold;
-  color: #d32f2f; /* En kontrasterande färg för texten */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  width: 80%; /* För att ge den lite mer andrum på sidan */
-  max-width: 90%; /* För att hålla den responsiv */
-  margin: 20px auto;
-}
-
-/* Stil för själva frågan */
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
+body {
   font-family: 'Comic Sans MS', sans-serif;
-  color: #d32f2f; /* Kontrastfärg för rubriken */
-}
-
-/* Stil för knappcontainer */
-#answers {
+  background-color: #f0f8ff;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-/* Stil för knappar */
-#answers button {
-  background-color: #f8d210;
-  border: none;
-  padding: 20px 30px;
-  font-size: 1.4em;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: 'Comic Sans MS', sans-serif;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#answers button:hover {
-  background-color: #ff4500;
-  transform: scale(1.1);
-}
-
-#answers button.correct {
-  background-color: #7ed321 !important;
-  color: white;
-}
-
-#answers button.wrong {
-  background-color: #ff4d4d !important;
-  color: white;
-}
+.quiz-container {
+  position: relative;
+  text-align: center;
+  background-image: url('images/karta.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 450px;

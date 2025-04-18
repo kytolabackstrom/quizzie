@@ -9,16 +9,26 @@
 <body>
   <div class="quiz-container">
     <h1>Geografi Quiz</h1>
-    <div id="question"></div>
+
+    <!-- Fråga Container -->
+    <div class="question-container">
+      <h1 id="question">Här kommer din fråga</h1> <!-- Dynamisk fråga som sätts via JS -->
+    </div>
+
+    <!-- Svarsalternativ -->
     <div id="answers"></div>
+
+    <!-- Knapp för att gå till nästa fråga -->
     <button id="next-button">Nästa fråga</button>
+
+    <!-- Knapp för att starta om quizet -->
     <button id="restart-button" style="display: none;">Nytt Quiz</button>
+
+    <!-- Poäng -->
     <div id="score"></div>
   </div>
 
   <script type="module" src="script.js"></script>
 </body>
 </html>
-
-
 
