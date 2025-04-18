@@ -1,20 +1,4 @@
-const questions = [
-  {
-    question: "Vilket land har Eiffeltornet?",
-    answers: ["Spanien", "Frankrike", "Italien", "Tyskland"],
-    correct: 1
-  },
-  {
-    question: "Var ligger pyramiderna?",
-    answers: ["Egypten", "Grekland", "Indien", "Japan"],
-    correct: 0
-  },
-  {
-    question: "Vilket land är känt för sina kängurus?",
-    answers: ["Australien", "USA", "Kanada", "Sydafrika"],
-    correct: 0
-  }
-];
+import { questions } from './questions.js';
 
 let currentQuestionIndex = 0;
 let score = 0;
