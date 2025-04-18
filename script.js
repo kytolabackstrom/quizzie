@@ -19,7 +19,7 @@ async function loadQuestions() {
 
 function shuffleQuestions() {
   // Slumpa om frågorna
-  questions = questions.sort(() => Math.random() - 0.5);
+  questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
 }
 
 function loadQuestion() {
