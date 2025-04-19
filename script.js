@@ -1,6 +1,8 @@
 // === 1. KONFIGURATION & INIT ===
 const numberOfQuestions = 3;
 const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
+const fanfar = new Audio('sounds/fanfar.mp3');
+
 
 let allQuestions = [];
 let usedQuestions = [];
@@ -34,6 +36,11 @@ function displayFinalScore() {
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
+
+  // Spela ljud vid full pott
+  if (score === questions.length) {
+    victorySound.play();
+  }
 }
 
 
