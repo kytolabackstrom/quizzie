@@ -64,6 +64,7 @@ async function loadQuestions() {
     allQuestions = await response.json();
     usedQuestions = [];
     loadNextSetOfQuestions();
+    document.getElementById('progress-indicator').textContent = `Fråga ${currentQuestionIndex + 1} av ${questions.length}`;
   } catch (error) {
     console.error("Kunde inte ladda frågorna:", error);
   }
