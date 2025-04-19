@@ -4,7 +4,6 @@ const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
 const fanfar = new Audio('sounds/fanfar.mp3');
 const fail = new Audio('sounds/fail.mp3');
 
-
 let allQuestions = [];
 let usedQuestions = [];
 let questions = [];
@@ -21,7 +20,6 @@ const scoreElement = document.getElementById('score');
 
 // === 3. HJÄLPFUNKTIONER ===
 
-// Fisher-Yates shuffle
 function shuffleArray(array) {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -31,31 +29,28 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-
 function displayFinalScore() {
-  
   if (score === questions.length) {
     questionElement.textContent = `Grattis, du fick alla rätt!`;
     fanfar.play();
-  }
-  else if (score === 0) {
+  } else if (score === 0) {
     questionElement.textContent = `Du fick tyvärr inga rätt`;
     fail.play();
-  }
-  else {
+  } else {
     questionElement.textContent = `Du fick ${score} av ${questions.length} rätt!`;
   }
 
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
-  document.getElementById('progress-indicator').innerHTML = '<span style="visibility: hidden;">Fråga 1 av 3</span>';
 
+  // Dölj frågeindikator men behåll utrymmet
+  document.getElementById('progress-indicator').innerHTML =
+    '<span style="visibility: hidden;">Fråga 1 av 3</span>';
 
+  // Centrera resultatlayouten
+  document.querySelector('.quiz-content')?.classList.add('center-result');
 }
-
-
-
 
 // === 4. LADDA FRÅGOR ===
 
@@ -104,7 +99,8 @@ function loadQuestion() {
     answersElement.appendChild(button);
   });
 
-  document.getElementById('progress-indicator').textContent = `Fråga ${currentQuestionIndex + 1} av ${questions.length}`;
+  document.getElementById('progress-indicator').textContent =
+    `Fråga ${currentQuestionIndex + 1} av ${questions.length}`;
 }
 
 function checkAnswer(selectedIndex, clickedButton) {
@@ -115,7 +111,7 @@ function checkAnswer(selectedIndex, clickedButton) {
   const allButtons = document.querySelectorAll('#answers button');
 
   allButtons.forEach((btn, index) => {
-    btn.disabled = true; // Inaktivera alla efter svar
+    btn.disabled = true;
 
     if (index === selectedIndex && index === currentQuestion.correct) {
       btn.classList.add('correct');
@@ -129,12 +125,13 @@ function checkAnswer(selectedIndex, clickedButton) {
     }
   });
 
+  // Ändra knapptext om det är sista frågan
   if (currentQuestionIndex === questions.length - 1) {
     nextButton.textContent = 'Resultat';
   } else {
     nextButton.textContent = 'Nästa fråga';
   }
-  
+
   nextButton.style.display = 'inline-block';
 }
 
@@ -151,6 +148,10 @@ function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   restartButton.style.display = 'none';
+
+  // Ta bort centreringsklassen så layouten återställs
+  document.querySelector('.quiz-content')?.classList.remove('center-result');
+
   loadNextSetOfQuestions();
 }
 

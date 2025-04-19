@@ -151,6 +151,13 @@ body {
   transform: scale(1.05);
 }
 
+.center-result {
+  justify-content: center; /* Vertikal centrering */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 30px; /* Extra luft mellan elementen */
+  text-align: center;
+}
 
 #restart-button {
   background-color: #66D4CF;
