@@ -128,6 +128,12 @@ function checkAnswer(selectedIndex, clickedButton) {
     }
   });
 
+  if (currentQuestionIndex === questions.length - 1) {
+    nextButton.textContent = 'Resultat';
+  } else {
+    nextButton.textContent = 'Nästa fråga';
+  }
+  
   nextButton.style.display = 'inline-block';
 }
 
