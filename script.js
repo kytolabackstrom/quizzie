@@ -64,7 +64,6 @@ async function loadQuestions() {
     allQuestions = await response.json();
     usedQuestions = [];
     loadNextSetOfQuestions();
-    document.getElementById('progress-indicator').textContent = `Fråga ${currentQuestionIndex + 1} av ${questions.length}`;
   } catch (error) {
     console.error("Kunde inte ladda frågorna:", error);
   }
@@ -103,6 +102,8 @@ function loadQuestion() {
     button.onclick = () => checkAnswer(index, button);
     answersElement.appendChild(button);
   });
+
+  document.getElementById('progress-indicator').textContent = `Fråga ${currentQuestionIndex + 1} av ${questions.length}`;
 }
 
 function checkAnswer(selectedIndex, clickedButton) {
