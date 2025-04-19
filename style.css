@@ -76,6 +76,13 @@ body {
   width: 100%;
 }
 
+body.start-page .quiz-container {
+  background-image: url('images/quizzie.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .quiz-container {
   position: relative;
   text-align: center;
