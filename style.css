@@ -137,15 +137,6 @@ body {
   transform: scale(1.1);
 }
 
-#score {
-  margin-top: 24px;
-  font-size: 1.4em;
-  color: #333;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Comic Sans MS', sans-serif;
-}
-
 #restart-button {
   background-color: #1e90ff;
   border: none;

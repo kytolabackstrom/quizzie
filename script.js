@@ -28,18 +28,14 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-function displayScore() {
-  scoreElement.textContent = `Poäng: ${score}`;
-  scoreElement.style.display = 'block'; // Visa poängrutan (bara vid slutet)
-}
 
 function displayFinalScore() {
   questionElement.textContent = `Du fick ${score} av ${questions.length} rätt!`;
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
-  displayScore(); // Visa poängen här
 }
+
 
 // === 4. LADDA FRÅGOR ===
 
