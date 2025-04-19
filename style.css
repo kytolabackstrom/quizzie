@@ -122,6 +122,8 @@ body {
 
 #next-button {
   background-color: #FFE6C7; /* Samma som question-container */
+  border: none;              /* 🧼 Tar bort eventuell ram */
+  outline: none;             /* 🧼 Tar bort ram vid fokus */
   padding: 14px 28px;
   font-size: 1.4em;
   border-radius: 20px;
@@ -130,7 +132,7 @@ body {
   margin-top: 24px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Comic Sans MS', sans-serif;
-  color: #3E1F47; /* Samma lila som text i frågan */
+  color: #3E1F47;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
