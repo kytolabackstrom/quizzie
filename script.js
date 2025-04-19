@@ -122,7 +122,6 @@ function nextQuestion() {
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  scoreElement.style.display = 'none'; // Dölj poängrutan igen
   restartButton.style.display = 'none';
   loadNextSetOfQuestions();
 }
