@@ -49,7 +49,8 @@ function displayFinalScore() {
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
-  document.getElementById('progress-indicator').textContent = '';
+  document.getElementById('progress-indicator').innerHTML = '<span style="visibility: hidden;">Fråga 1 av 3</span>';
+
 
 }
 
