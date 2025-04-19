@@ -2,6 +2,7 @@
 const numberOfQuestions = 3;
 const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
 const fanfar = new Audio('sounds/fanfar.mp3');
+const fail = new Audio('sounds/fail.mp3');
 
 
 let allQuestions = [];
@@ -41,7 +42,14 @@ function displayFinalScore() {
   if (score === questions.length) {
     fanfar.play();
   }
+
+// Spela ljud vid 0 poäng
+if (score === 0) {
+  fail.play();
 }
+}
+
+
 
 
 // === 4. LADDA FRÅGOR ===
