@@ -49,7 +49,7 @@ function displayFinalScore() {
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
-
+  document.getElementById('progress-indicator').textContent = '';
 
 }
 
