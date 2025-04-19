@@ -39,7 +39,7 @@ function displayFinalScore() {
 
   // Spela ljud vid full pott
   if (score === questions.length) {
-    fanafar.play();
+    fanfar.play();
   }
 }
 
