@@ -121,8 +121,8 @@ body {
 }
 
 #next-button {
-  background-color: #32cd32;
-  border: none;
+  background-color: #FFE6C7; /* Samma som question-container */
+  border: 2px solid #3E1F47; /* Lila kant för tydlighet */
   padding: 14px 28px;
   font-size: 1.4em;
   border-radius: 20px;
@@ -130,12 +130,15 @@ body {
   margin-top: 24px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Comic Sans MS', sans-serif;
+  color: #3E1F47; /* Samma lila som text i frågan */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #next-button:hover {
-  background-color: #228b22;
-  transform: scale(1.1);
+  background-color: #ffdab0; /* Lite mörkare beige vid hover */
+  transform: scale(1.05);
 }
+
 
 #restart-button {
   background-color: #1e90ff;
