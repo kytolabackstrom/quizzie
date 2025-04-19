@@ -1,31 +1,26 @@
 [
     {
-      "question": "Vilket land har Eiffeltornet?",
+      "question": "I vilket land ligger Eiffeltornet?",
       "answers": ["Spanien", "Frankrike", "Italien", "Tyskland"],
       "correct": 1
     },
     {
-      "question": "Var ligger pyramiderna?",
+      "question": "I vilket land ligger pyramiderna?",
       "answers": ["Egypten", "Grekland", "Indien", "Japan"],
       "correct": 0
     },
     {
-      "question": "Vilket land är känt för sina kängurus?",
+      "question": "Vilket land är känt för sina kängurur?",
       "answers": ["Australien", "USA", "Kanada", "Sydafrika"],
       "correct": 0
     },
     {
-      "question": "Vilken stad är Sveriges huvudstad?",
+      "question": "Vad heter Sveriges huvudstad?",
       "answers": ["Göteborg", "Uppsala", "Stockholm", "Malmö"],
       "correct": 2
     },
     {
-      "question": "Vilket hav ligger öster om Sverige?",
-      "answers": ["Atlanten", "Stilla havet", "Östersjön", "Indiska oceanen"],
-      "correct": 2
-    },
-    {
-      "question": "Vilket land ligger direkt söder om Sverige?",
+      "question": "Vilket land sitter ihop med Sverige via Öresundsbron?",
       "answers": ["Norge", "Tyskland", "Danmark", "Finland"],
       "correct": 2
     },
@@ -40,12 +35,7 @@
       "correct": 2
     },
     {
-      "question": "Vad heter det stora landet norr om USA?",
-      "answers": ["Mexiko", "Kanada", "Brasilien", "Grönland"],
-      "correct": 1
-    },
-    {
-      "question": "Vilket land är känt för sin pizza och pasta?",
+      "question": "Vilket land kommer pizza och pasta ifrån?",
       "answers": ["Tyskland", "Italien", "Portugal", "Belgien"],
       "correct": 1
     }

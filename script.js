@@ -63,7 +63,6 @@ function loadNextSetOfQuestions() {
   usedQuestions = usedQuestions.concat(questions);
   currentQuestionIndex = 0;
   score = 0;
-  scoreElement.style.display = 'none'; // Dölj poängrutan i början
   loadQuestion();
 }
 
