@@ -9,27 +9,22 @@
 <body>
   <div class="quiz-container">
 
-    <!-- Fråga Container - nu får frågan en egen container för stiländring -->
-    <div class="question-container">
-      <div id="question"></div> <!-- Här uppdateras frågan via JS -->
-    </div>
-
-    <!-- Svarsalternativ -->
-    <div id="answers"></div>
-
-    <!-- Knapp för att gå till nästa fråga -->
-    <button id="next-button">Nästa fråga</button>
-
-    <!-- Knapp för att starta om quizet -->
-    <button id="restart-button" style="display: none;">Spela igen</button>
-
-  <!-- Frågeindikator som footer -->
-  <div id="progress-indicator" class="progress-footer"></div>
-
-  </div>
-
-
+    <div class="quiz-content">
+      <div class="question-container">
+        <div id="question"></div>
+      </div>
   
+      <div id="answers"></div>
+  
+      <button id="next-button">Nästa fråga</button>
+      <button id="restart-button" style="display: none;">Spela igen</button>
+    </div>
+  
+    <!-- 👣 Footern längst ner -->
+    <div id="progress-indicator" class="progress-footer"></div>
+  
+  </div>  
+
   <script src="script.js"></script>
 
 </body>
