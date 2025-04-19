@@ -38,10 +38,17 @@ function displayFinalScore() {
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
 
-  // Spela ljud vid full pott
   if (score === questions.length) {
     fanfar.play();
+  
+    // 🎉 Konfetti-effekt
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
   }
+  
 
 // Spela ljud vid 0 poäng
 if (score === 0) {
