@@ -33,21 +33,24 @@ function shuffleArray(array) {
 
 
 function displayFinalScore() {
-  questionElement.textContent = `Du fick ${score} av ${questions.length} rätt!`;
+  
+  if (score === questions.length) {
+    questionElement.textContent = `Grattis, du fick alla rätt!`;
+    fanfar.play();
+  }
+  else if (score === 0) {
+    questionElement.textContent = `Du fick tyvärr inga rätt`;
+    fail.play();
+  }
+  else {
+    questionElement.textContent = `Du fick ${score} av ${questions.length} rätt!`;
+  }
+
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
 
-  if (score === questions.length) {
-    fanfar.play();
 
-  }
-  
-
-// Spela ljud vid 0 poäng
-if (score === 0) {
-  fail.play();
-}
 }
 
 
