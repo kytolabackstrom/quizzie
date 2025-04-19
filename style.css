@@ -155,7 +155,7 @@ body {
   justify-content: center; /* Vertikal centrering */
   padding-top: 60px;
   padding-bottom: 60px;
-  gap: 30px; /* Extra luft mellan elementen */
+  gap: 10px; /* Extra luft mellan elementen */
   text-align: center;
 }
 
