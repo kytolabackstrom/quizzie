@@ -14,6 +14,60 @@ body {
   overflow-x: hidden;
 }
 
+.start-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 40px 16px;
+  gap: 32px;
+}
+
+.quizzie-title {
+  font-size: 3em;
+  color: #3E1F47;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #FFE6C7;
+  padding: 16px 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.quiz-btn {
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #3E1F47;
+  font-family: 'Comic Sans MS', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+}
+
+.quiz-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
 .quiz-content {
   flex: 1;
   display: flex;
