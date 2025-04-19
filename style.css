@@ -160,15 +160,17 @@ body {
   transform: scale(1.1);
 }
 
-.progress-box {
+.progress-footer {
   background-color: #FFF5D2; /* Ljusgul bakgrund */
   color: #3E1F47;
   font-weight: bold;
   font-size: 1.2em;
-  padding: 12px 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  border-radius: 0 0 20px 20px; /* Rundade hörn bara nertill */
+  margin-top: 30px;
+  width: 100%;
   text-align: center;
   font-family: 'Comic Sans MS', sans-serif;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.04);
 }
+
