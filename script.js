@@ -30,6 +30,7 @@ function shuffleArray(array) {
 
 function displayScore() {
   scoreElement.textContent = `Poäng: ${score}`;
+  scoreElement.style.display = 'block'; // Visa poängrutan (bara vid slutet)
 }
 
 function displayFinalScore() {
@@ -37,6 +38,7 @@ function displayFinalScore() {
   answersElement.innerHTML = '';
   nextButton.style.display = 'none';
   restartButton.style.display = 'inline-block';
+  displayScore(); // Visa poängen här
 }
 
 // === 4. LADDA FRÅGOR ===
@@ -65,6 +67,7 @@ function loadNextSetOfQuestions() {
   usedQuestions = usedQuestions.concat(questions);
   currentQuestionIndex = 0;
   score = 0;
+  scoreElement.style.display = 'none'; // Dölj poängrutan i början
   loadQuestion();
 }
 
@@ -98,21 +101,19 @@ function checkAnswer(selectedIndex, clickedButton) {
     btn.disabled = true; // Inaktivera alla efter svar
 
     if (index === selectedIndex && index === currentQuestion.correct) {
-      btn.classList.add('correct'); // Rätt val
+      btn.classList.add('correct');
       score++;
     } else if (index === selectedIndex && index !== currentQuestion.correct) {
-      btn.classList.add('wrong'); // Fel val
+      btn.classList.add('wrong');
     } else if (index === currentQuestion.correct) {
-      btn.classList.add('correct'); // Visa vilket som var rätt
+      btn.classList.add('correct');
     } else {
-      btn.classList.add('dimmed'); // Övriga knappar
+      btn.classList.add('dimmed');
     }
   });
 
-  displayScore();
   nextButton.style.display = 'inline-block';
 }
-
 
 function nextQuestion() {
   currentQuestionIndex++;
@@ -126,7 +127,7 @@ function nextQuestion() {
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  displayScore();
+  scoreElement.style.display = 'none'; // Dölj poängrutan igen
   restartButton.style.display = 'none';
   loadNextSetOfQuestions();
 }
@@ -138,4 +139,3 @@ window.addEventListener('load', () => {
   nextButton.addEventListener('click', nextQuestion);
   restartButton.addEventListener('click', restartQuiz);
 });
-
