@@ -1,4 +1,7 @@
 // === 1. KONFIGURATION & INIT ===
+import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.mjs';
+
+
 const numberOfQuestions = 3;
 const buttonColors = ['btn-orange', 'btn-lilac', 'btn-turquoise', 'btn-lemon'];
 const fanfar = new Audio('sounds/fanfar.mp3');
